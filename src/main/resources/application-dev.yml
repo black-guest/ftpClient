@@ -1,0 +1,88 @@
+fdfs:
+  so-timeout: 15000
+  connect-timeout: 6000
+  reqHost: 114.55.253.180
+  reqPort: 7777
+  thumb-image:
+    height: 150
+    width: 150
+  tracker-list:
+    - 114.55.253.180:22122
+
+server:
+    port: 8080
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://119.3.174.234:3306/learn?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull&connectTimeout=60000&socketTimeout=60000&autoReconnect=true
+    username: root
+    password: zjw123!@#
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    max-active: 10
+    max-wait: 10000
+    min-idle: 5
+    initial-size: 5
+  #thymeleaf模板引擎
+  thymeleaf:
+   suffix: .html
+  # 定位模板的目录
+   prefix:  classpath:/templates/
+  # 给返回的页面添加后缀名
+   servlet:
+     content-type: text/html
+   mode: HTML5
+  # 开发时，关闭缓存
+   cache: false
+
+  mybatis-plus:
+    config-location: classpath:/mapper/*Mapper.xml
+    typeAliasesPackage: com.cn.restyle.entity
+  #日志打印
+  logging:
+    config: classpath:logback.xml
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/, classpath:/static/, classpath:/public/
+  # redis
+  redis:
+    database: 0
+    host: 127.0.0.1
+    password:
+    port: 6379
+    jedis:
+      pool:
+        max-idle: 8
+
+  #文件请求大小
+  servlet:
+    multipart:
+      max-file-size: 300MB
+      max-request-size: 500MB
+
+#ES配置
+elasticsearch:
+  nodes: 127.0.0.1:9200
+  schema: http
+  max-connect-total: 50
+  max-connect-per-route: 10
+  connection-request-timeout-millis: 500
+  socket-timeout-millis: 30000
+  connect-timeout-millis: 1000
+
+#意思是你的服务器路径serverdata 对应你本地的/data目录这时你的，假如要访问/data/test.jpg图片，对应的服务器路径为 http://localhost:serverdata/test.jpg
+#local:
+#  fileserver:
+#    dir: /data
+#    path: serverdata
+
+local:
+  file:
+    path: 139.9.222.244
+    port:
+
+# 开发测试时 设置为true，上线设置为false
+swagger:
+  show:
+    true
+
+

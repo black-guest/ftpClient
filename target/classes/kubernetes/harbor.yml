@@ -1,0 +1,20 @@
+harbor:
+  #harbor的访问ip和port
+  host:
+#    ip: 139.9.39.182
+#    ip: 114.67.122.188
+    ip: 121.36.99.173
+    port: 2375
+#    ip: 222.133.189.148
+#    port: 8081
+  #harbor登录的用户名和密码
+  user:
+    userName: "admin"
+    password: "Harbor12345"
+  #创建project的相关配置
+  projectMetadata:
+    public: "true"
+    enable_content_trust: "true"
+    prevent_vul: "true"
+    severity: "low"
+    auto_scan: "true"

@@ -1,0 +1,21 @@
+docker:
+  #java连接docker的端口号（所有节点用同一端口号）
+  dockerPort: 30000
+  #docker对外暴露的端口号
+  exposePort: 6080
+  #访问exposePort的url 完整的url为 nodeIp:exposePort+url
+  url: /vnc.html?password=asd123&autoconnect=1&title=novnc2
+  #设置虚机是否自动回收
+  autoDelete: false
+  #设置虚机默认的存活时间(单位为秒s)
+  liveTime: 3600
+  #设置虚机默认的延时时间(单位为秒s)
+  delayTime: 1800
+  #docker的tag快照上限
+  tagNum: 2
+  #docker的资源配置上限
+  limits:
+    # cpu的配置就算是整数，也必须时1.0或者2.0（程序是按照Double数据类型来读取的）
+#    cpu: 1.0
+    cpu: 1.0
+    memory: 1200Mi

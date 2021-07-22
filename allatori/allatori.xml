@@ -1,0 +1,37 @@
+<config>
+    <input>
+        <jar in="../target/docker-client-1.0-SNAPSHOT.jar" out="../target/learn-1.0-SNAPSHOT-obfuscated.jar"/>
+    </input>
+
+    <keep-names>
+        <class access="protected+">
+<!--            <field access="protected+"/>-->
+            <method access="protected+"/>
+        </class>
+    </keep-names>
+
+    <classpath>
+        <!-- Adding all jars in the lib2 directory and its subdirectories to the classpath -->
+        <jar name="C:\Users\Administrator\.m2\repository/**/*.jar"/>
+    </classpath>
+
+    <ignore-classes>
+        <class template="class *springframework*" />
+        <class template="class *shardingjdbc*" />
+        <class template="class *jni*" />
+        <class template="class *alibaba*"/>
+        <class template="class *persistence*"/>
+
+<!--        <class template="class com.wwx.server.*" />-->
+<!--        <class template="class com.wwx.controller.*"/>-->
+<!--        <class template="class com.wwx.serviceImpl.*"/>-->
+<!--        <class template="class com.wwx.mapper.*"/>-->
+<!--        <class template="class com.wwx.entity.*"/>-->
+
+        <class template="class com.wwx.*"/>
+
+    </ignore-classes>
+
+    <property name="log-file" value="log.xml"/>
+<!--    <property name="fields-naming" value="custom(rename.txt)"/>-->
+</config>
